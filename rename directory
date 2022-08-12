@@ -1,0 +1,34 @@
+we can rename files and directories using the Bash scripting language. In order to rename multiple directories by using a Bash script, create a new script, and use an 'mv' command with for loop. let's understand the following example:
+
+First, create some text files which can be renamed later. To create 10 files at once, execute the below script:
+
+for i in {1..10}  
+>do  
+>touch $i.txt;  
+>done;  
+
+To verify whether the files are created or not, execute the below script:
+
+for i in *.txt  
+>do  
+>echo $i;  
+>done;  
+
+Now create a variable 'newfile,' execute the below script:
+
+for i in *.txt  
+>do  
+>newfile=${i/.txt/.zip};  
+>echo $newfile;  
+>done;  
+
+Now, we can rename all the files using the mv command. To rename files with mv command using a bash script, execute the below script:
+for i in *.txt  
+>do  
+>newfile=${i/.txt/.zip};  
+>mv $i $newfile;  
+>done:  
+
+The above script will convert all the text files into zip files. To list the files, execute the ls command as follows:
+
+ls -lta
